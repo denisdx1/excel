@@ -1,0 +1,46 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+datos = pd.read_csv("https://raw.githubusercontent.com/Shuhiro/Excel/main/Lineal.csv")
+datos
+
+from sklearn.model_selection import train_test_split
+entrenamiento,prueba,entramiento_clase,prueba_clase=train_test_split(
+    datos[["VelocidadViento","Presion","Humedad"]],
+    datos["Temperatura"],
+    test_size=0.70
+)
+entrenamiento
+
+
+plt.ylabel("Temperatura Actual")
+plt.xlabel("Humedad Actual")
+plt.scatter(datos["Humedad"], datos["Temperatura"], color="red")
+plt.show()
+
+
+from sklearn import linear_model
+regression=  linear_model.LinearRegression() 
+# crea un objeto de modelo de regresión lineal
+
+humedad=datos["Humedad"].values.reshape((-1,1))
+
+# entrenamos el modelo
+modelo= regression.fit(humedad, datos["Temperatura"])
+
+print("Interseccion (b)", modelo.intercept_)
+print("Pendiente (m)", modelo.coef_)
+
+# calculemos la predicción de las siguientes mediciones tanto a la humedad actual
+entradaFuture=[[2],[3],[4],[5]]
+modelo.predict(entradaFuture)
+
+entrada=[[0.01],[0.6],[0.7],[0.1],[1.05]]
+plt.scatter(entrada, modelo.predict(entrada), color="blue")
+plt.plot(entrada,modelo.predict(entrada), color="black" )
+
+plt.ylabel("Temperatura Actual")
+plt.xlabel("Humedad Actual")
+plt.scatter(datos["Humedad"], datos["Temperatura"], color="pink")
+plt.show()
