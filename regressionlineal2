@@ -58,3 +58,10 @@ plt.ylabel('Ingresos')
 plt.legend()
 plt.show()
 #0 significa que NO TIENE AUTO y 1 significa que SI TIENE AUTO
+
+//COMENTARIO
+Las variables hijo e ingresos aportan porque muchas veces uno se compra auto segun sus ingresos y segun los gastos que uno tenga, entre esos gastos estan 
+los hijos por eso esas dos variables aportan mucho en lo que si se tiene un auto o no. Las variables edad, sexo y civil no aportan mucho ya que el hecho 
+que seas femenino o masculino no significa que de eso dependa tener un auto, tampoco iporta si estas casado o no para tener un auto, y la edad muchas veces 
+puede importar pero sin embargo uno puede tener una edad avanzada y tener auto, ya sea para usarlo o alquilarlo o algun otro uso. Por esos motivos no aportan
+al resultado del modelo.
