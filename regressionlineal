@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-datos = pd.read_csv("https://raw.githubusercontent.com/Shuhiro/Excel/main/Lineal.csv")
+datos = pd.read_csv("Lineal.csv")
 datos
 
 from sklearn.model_selection import train_test_split
